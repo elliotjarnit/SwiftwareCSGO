@@ -1,0 +1,14 @@
+name: Test on Windows
+
+on: [push, pull_request]
+
+jobs:
+  windows:
+    name: Test on Windows
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+    - name: Compile app
+      run: msbuild Swiftware\Swiftware.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release
