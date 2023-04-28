@@ -4,12 +4,12 @@ on: [push, pull_request]
 
 jobs:
   windows:
-    name: run on windows
+    name: Test on Windows
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1.4.1
     - name: compile
-      working-directory: ./Swiftware/src
+      working-directory: ./Swiftware/
       run: | 
-        cl main.cpp /std:c++latest
+        cl src/main.cpp /std:c++latest
