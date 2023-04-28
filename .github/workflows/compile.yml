@@ -10,6 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1.4.1
     - name: compile
-      working-directory: ./Swiftware
+      working-directory: ./Swiftware/src
       run: | 
         cl main.cpp /std:c++latest
