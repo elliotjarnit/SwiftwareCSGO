@@ -1,7 +1,6 @@
 name: Compile Swiftware
 
-on:
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   windows:
@@ -11,5 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1.4.1
     - name: compile
+      working-directory: ./Swiftware
       run: | 
         cl main.cpp /std:c++latest
